@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto P4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    /* Tipografía base y paleta escolar azul marino, celeste suave y amarillo cálido suave */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ebf3fa;
+      color: #0f2544;
+      margin: 0;
+      padding: 20px 12px;
+    }
+
+    /* Hoja principal tipo guía escolar */
+    .hoja-escolar {
+      max-width: 1120px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 2px solid #0f2544;
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 8px 24px rgba(15, 37, 68, 0.08);
+    }
+
+    @media (min-width: 768px) {
+      .hoja-escolar {
+        padding: 36px 40px;
+      }
+    }
+
+    /* Encabezado de sección en azul marino */
+    .barra-seccion {
+      background-color: #0f2544;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 14px 20px;
+      border-bottom: 4px solid #2b6cb0;
+    }
+
+    /* Recuadro informativo en celeste suave */
+    .caja-celeste {
+      background-color: #ebf3fa;
+      border: 1.5px solid #90cdf4;
+      border-radius: 12px;
+      padding: 16px 18px;
+      color: #0f2544;
+    }
+
+    /* Recuadro de nota o observación en amarillo cálido suave */
+    .caja-amarilla {
+      background-color: #fef9e7;
+      border: 1.5px solid #ecc94b;
+      border-radius: 12px;
+      padding: 16px 18px;
+      color: #0f2544;
+    }
+
+    /* Tarjeta blanca para casos y evaluación */
+    .tarjeta-blanca {
+      background-color: #ffffff;
+      border: 1.5px solid #0f2544;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    /* Botón de enlace directo */
+    .boton-canva {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0f2544;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 2px solid #0f2544;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .boton-canva:hover {
+      background-color: #ebf3fa;
+      color: #0f2544;
+    }
+
+    /* Estilo de tabla escolar */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #0f2544;
+      color: #ffffff;
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid #0f2544;
+    }
+
+    td {
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #ebf3fa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor principal de la guía escolar -->
+  <main class="hoja-escolar space-y-10">
+
+    <!-- Encabezado general con datos del estudiante y la institución -->
+    <header class="border-b-2 border-[#0f2544] pb-6 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs sm:text-sm font-bold text-[#0f2544] uppercase tracking-wide">
+        <span>Cibercolegio UCN</span>
+        <span>Año 2026</span>
+      </div>
+
+      <div class="space-y-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0f2544]">
+          Proyecto ética P4
+        </h1>
+      </div>
+
+      <!-- Datos de identificación -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 caja-celeste text-sm">
+        <div>
+          <span class="block text-xs font-bold uppercase text-[#1e3a8a]">Estudiantes</span>
+          <strong class="text-[#0f2544]">Juan Pablo Zúñiga Castañeda y Nicolás Luna Alemán</strong>
+        </div>
+        <div>
+          <span class="block text-xs font-bold uppercase text-[#1e3a8a]">Grado</span>
+          <strong class="text-[#0f2544]">10°D</strong>
+        </div>
+        <div>
+          <span class="block text-xs font-bold uppercase text-[#1e3a8a]">Institución</span>
+          <strong class="text-[#0f2544]">Cibercolegio UCN</strong>
+        </div>
+        <div>
+          <span class="block text-xs font-bold uppercase text-[#1e3a8a]">Año</span>
+          <strong class="text-[#0f2544]">2026</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Actividad 1: Hallazgos de Urbanidad y Civismo -->
+    <section id="actividad-1" aria-labelledby="titulo-act-1" class="space-y-4">
+      <div class="barra-seccion flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h2 id="titulo-act-1" class="text-lg sm:text-xl font-bold">
+          Actividad 1: Hallazgos de Urbanidad y Civismo
+        </h2>
+        <span class="text-xs font-bold bg-[#ebf3fa] text-[#0f2544] px-3 py-1 rounded-lg self-start sm:self-auto">
+          5 Hallazgos Registrados
+        </span>
+      </div>
+
+      <div class="caja-celeste text-sm sm:text-base leading-relaxed">
+        Registro de cinco situaciones observadas en la vida cotidiana donde se identifican normas de urbanidad y civismo, acompañadas del lugar del hallazgo y el enlace directo a las fotografías de evidencia en Canva.
+      </div>
+
+      <!-- Tabla con los 5 hallazgos requeridos -->
+      <div class="overflow-x-auto rounded-xl border border-[#0f2544]">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 8%;">N.°</th>
+              <th style="width: 52%;">Ejemplo Registrado</th>
+              <th style="width: 18%;">Tipo de Norma</th>
+              <th style="width: 22%;">Lugar del Hallazgo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-bold text-[#0f2544]">1</td>
+              <td>Responder una llamada telefónica de manera discreta y con un tono de voz moderado sin activar el altavoz para no interrumpir a quienes están presentes.</td>
+              <td class="font-semibold text-[#0f2544]">Urbanidad</td>
+              <td>Casa de Nicolás</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-[#0f2544]">2</td>
+              <td>Respetar los linderos y cercados de la propiedad rural, manteniendo limpios los prados y la orilla del camino sin arrojar residuos.</td>
+              <td class="font-semibold text-[#0f2544]">Civismo</td>
+              <td>Finca</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-[#0f2544]">3</td>
+              <td>Saludar con cordialidad estrechando la mano y manteniendo contacto visual al recibir o despedir a una persona en el hogar.</td>
+              <td class="font-semibold text-[#0f2544]">Urbanidad</td>
+              <td>Sala de la casa de Nicolás</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-[#0f2544]">4</td>
+              <td>Atender la señal de tránsito de prohibido girar a la izquierda para conservar el orden vial y prevenir riesgos en la vía.</td>
+              <td class="font-semibold text-[#0f2544]">Civismo</td>
+              <td>Calle</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-[#0f2544]">5</td>
+              <td>Depositar los residuos no aprovechables, como servilletas y envolturas sucias, en la caneca dispuesta para ello y mantener limpio el espacio común.</td>
+              <td class="font-semibold text-[#0f2544]">Civismo</td>
+              <td>Centro comercial</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Enlace a las fotos de evidencia en Canva -->
+      <div class="caja-amarilla flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="space-y-1">
+          <h3 class="text-sm sm:text-base font-bold text-[#0f2544]">
+            Fotos de Evidencia de la Actividad 1
+          </h3>
+          <p class="text-xs sm:text-sm text-[#0f2544]">
+            Consulta el registro fotográfico de los cinco hallazgos de urbanidad y civismo en Canva.
+          </p>
+        </div>
+        <a
+          href="https://canva.link/n0miyxo2z9rywdh"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="boton-canva shrink-0"
+        >
+          Abrir Fotos de Evidencia en Canva
+        </a>
+      </div>
+    </section>
+
+    <!-- Actividad 2: Enlace directo a Canva -->
+    <section id="actividad-2" aria-labelledby="titulo-act-2" class="space-y-4">
+      <div class="barra-seccion flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h2 id="titulo-act-2" class="text-lg sm:text-xl font-bold">
+          Actividad 2: Recursos y Conclusiones en Canva
+        </h2>
+        <span class="text-xs font-bold bg-[#ebf3fa] text-[#0f2544] px-3 py-1 rounded-lg self-start sm:self-auto">
+          Enlace Directo
+        </span>
+      </div>
+
+      <div class="caja-celeste flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="space-y-1">
+          <h3 class="text-sm sm:text-base font-bold text-[#0f2544]">
+            Presentación y Conclusiones de la Actividad 2
+          </h3>
+          <p class="text-xs sm:text-sm text-[#0f2544]">
+            Accede directamente al desarrollo visual y las conclusiones elaboradas para la Actividad 2.
+          </p>
+        </div>
+        <a
+          href="https://canva.link/vuc0ejruoummydo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="boton-canva shrink-0"
+        >
+          Ir a la Actividad 2 en Canva
+        </a>
+      </div>
+    </section>
+
+    <!-- Actividad 3: Monitoreo semanal y evaluación de casos -->
+    <section id="actividad-3" aria-labelledby="titulo-act-3" class="space-y-5">
+      <div class="barra-seccion flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h2 id="titulo-act-3" class="text-lg sm:text-xl font-bold">
+          Actividad 3: Monitoreo Semanal y Evaluación de Casos
+        </h2>
+        <span class="text-xs font-bold bg-[#ebf3fa] text-[#0f2544] px-3 py-1 rounded-lg self-start sm:self-auto">
+          Día 1 al Día 7
+        </span>
+      </div>
+
+      <div class="caja-celeste text-sm sm:text-base leading-relaxed">
+        Seguimiento diario del Día 1 al Día 7 sobre tres situaciones reales observadas en el entorno familiar, escolar y digital, junto con su evaluación en tres columnas.
+      </div>
+
+      <!-- Línea del Día 1 al Día 7 -->
+      <div class="tarjeta-blanca space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-bold text-[#0f2544]">
+          <span>Monitoreo Semanal: Día 1 al Día 7</span>
+          <span>Tres Casos Observados</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-center">
+          <div class="caja-celeste p-2.5">
+            <div class="text-xs font-extrabold">Día 1</div>
+            <div class="text-xs mt-1">Inicio del registro en casa</div>
+          </div>
+          <div class="caja-amarilla p-2.5">
+            <div class="text-xs font-extrabold">Día 2</div>
+            <div class="text-xs mt-1">Caso 1: Entorno familiar</div>
+          </div>
+          <div class="caja-celeste p-2.5">
+            <div class="text-xs font-extrabold">Día 3</div>
+            <div class="text-xs mt-1">Observación en clase</div>
+          </div>
+          <div class="caja-amarilla p-2.5">
+            <div class="text-xs font-extrabold">Día 4</div>
+            <div class="text-xs mt-1">Caso 2: Inclusión escolar</div>
+          </div>
+          <div class="caja-celeste p-2.5">
+            <div class="text-xs font-extrabold">Día 5</div>
+            <div class="text-xs mt-1">Seguimiento en grupos</div>
+          </div>
+          <div class="caja-amarilla p-2.5">
+            <div class="text-xs font-extrabold">Día 6</div>
+            <div class="text-xs mt-1">Caso 3: Redes sociales</div>
+          </div>
+          <div class="caja-celeste p-2.5">
+            <div class="text-xs font-extrabold">Día 7</div>
+            <div class="text-xs mt-1">Síntesis y evaluación</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tres casos observados -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="tarjeta-blanca space-y-2">
+          <div class="text-xs font-extrabold uppercase text-[#1e3a8a]">Caso 1 · Días 1 y 2 · Familia</div>
+          <h3 class="text-base font-bold text-[#0f2544]">Distracción con el celular durante la comida</h3>
+          <p class="text-sm text-[#0f2544] leading-relaxed">
+            En el hogar, durante una comida compartida, se presentó distracción constante con el teléfono móvil y respuestas cortantes que limitaron el diálogo familiar.
+          </p>
+        </div>
+
+        <div class="tarjeta-blanca space-y-2">
+          <div class="text-xs font-extrabold uppercase text-[#1e3a8a]">Caso 2 · Días 3 y 4 · Escuela</div>
+          <h3 class="text-base font-bold text-[#0f2544]">Inclusión de un compañero sin grupo</h3>
+          <p class="text-sm text-[#0f2544] leading-relaxed">
+            En la jornada escolar, al notar que un compañero no tenía grupo asignado para realizar una actividad, el equipo lo invitó a integrarse y escuchó sus aportes con respeto.
+          </p>
+        </div>
+
+        <div class="tarjeta-blanca space-y-2">
+          <div class="text-xs font-extrabold uppercase text-[#1e3a8a]">Caso 3 · Días 5 al 7 · Redes Sociales</div>
+          <h3 class="text-base font-bold text-[#0f2544]">Comentarios burlescos y rumores en chat</h3>
+          <p class="text-sm text-[#0f2544] leading-relaxed">
+            En un grupo de mensajería circularon burlas y comentarios sin confirmar sobre otra persona, afectando la confianza y el buen trato digital.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tabla de evaluación en tres columnas -->
+      <div class="overflow-x-auto rounded-xl border border-[#0f2544]">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 33.33%;">Caso 1: Familia (Días 1 y 2)</th>
+              <th style="width: 33.33%;">Caso 2: Escuela (Días 3 y 4)</th>
+              <th style="width: 33.34%;">Caso 3: Redes Sociales (Días 5 al 7)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="font-bold text-[#0f2544] mb-1">Normas</div>
+                <p class="mb-3">Se incumplen las normas de escucha atenta, cortesía en la mesa y respeto mutuo durante el tiempo compartido en familia.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Riesgos</div>
+                <p class="mb-3">Genera distancia afectiva, malentendidos y discusiones innecesarias en el hogar.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Propuesta de actuación</div>
+                <p>Guardar el teléfono durante las comidas y mantener una conversación abierta y respetuosa.</p>
+              </td>
+              <td>
+                <div class="font-bold text-[#0f2544] mb-1">Normas</div>
+                <p class="mb-3">Se cumplen las normas de inclusión, empatía, solidaridad y sana convivencia escolar al integrar al compañero sin grupo.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Riesgos</div>
+                <p class="mb-3">Dejar a alguien sin grupo habría provocado aislamiento, desánimo y dificultad para participar en la tarea.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Propuesta de actuación</div>
+                <p>Verificar siempre que todos los compañeros tengan grupo, distribuir roles con equidad y valorar cada idea.</p>
+              </td>
+              <td>
+                <div class="font-bold text-[#0f2544] mb-1">Normas</div>
+                <p class="mb-3">Se incumplen las reglas de netiqueta, respeto a la dignidad y responsabilidad al difundir información no verificada.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Riesgos</div>
+                <p class="mb-3">Causa daño emocional, conflictos entre conocidos y propagación de rumores falsos.</p>
+                <div class="font-bold text-[#0f2544] mb-1">Propuesta de actuación</div>
+                <p>No participar en burlas ni reenviar rumores, contrastar la información y promover mensajes respetuosos.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Actividad 4: Organizador gráfico SVG con formas geométricas -->
+    <section id="actividad-4" aria-labelledby="titulo-act-4" class="space-y-4">
+      <div class="barra-seccion flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h2 id="titulo-act-4" class="text-lg sm:text-xl font-bold">
+          Actividad 4: Organizador Gráfico de Comunicación Respetuosa
+        </h2>
+        <span class="text-xs font-bold bg-[#ebf3fa] text-[#0f2544] px-3 py-1 rounded-lg self-start sm:self-auto">
+          Mapa Geométrico
+        </span>
+      </div>
+
+      <div class="caja-celeste text-sm sm:text-base leading-relaxed">
+        Organizador gráfico con formas geométricas centrado en la comunicación respetuosa en redes y entorno, articulado en cuatro ramas con texto breve: Respeto, Diversidad, Convivencia y Educación vial.
+      </div>
+
+      <!-- Organizador gráfico SVG responsive -->
+      <div class="tarjeta-blanca overflow-x-auto">
+        <svg
+          viewBox="0 0 1040 620"
+          class="w-full h-auto min-w-[680px] block mx-auto"
+          role="img"
+          aria-label="Organizador gráfico con formas geométricas sobre Comunicación Respetuosa en redes y entorno y las cuatro ramas: Respeto, Diversidad, Convivencia y Educación vial"
+        >
+          <!-- Fondo suave -->
+          <rect x="0" y="0" width="1040" height="620" rx="14" fill="#ebf3fa" />
+
+          <!-- Líneas conectoras desde el hexágono central hacia las cuatro ramas -->
+          <line x1="415" y1="255" x2="290" y2="165" stroke="#0f2544" stroke-width="4" />
+          <polygon points="282,159 298,162 290,174" fill="#0f2544" />
+
+          <line x1="625" y1="255" x2="750" y2="165" stroke="#0f2544" stroke-width="4" />
+          <polygon points="758,159 750,174 742,162" fill="#0f2544" />
+
+          <line x1="415" y1="365" x2="290" y2="455" stroke="#0f2544" stroke-width="4" />
+          <polygon points="282,461 290,446 298,458" fill="#0f2544" />
+
+          <line x1="625" y1="365" x2="750" y2="455" stroke="#0f2544" stroke-width="4" />
+          <polygon points="758,461 742,458 750,446" fill="#0f2544" />
+
+          <!-- Rombos geométricos decorativos sobre los ejes -->
+          <polygon points="348,200 362,212 348,224 334,212" fill="#fef9e7" stroke="#0f2544" stroke-width="2.5" />
+          <polygon points="692,200 706,212 692,224 678,212" fill="#fef9e7" stroke="#0f2544" stroke-width="2.5" />
+          <polygon points="348,396 362,408 348,420 334,408" fill="#fef9e7" stroke="#0f2544" stroke-width="2.5" />
+          <polygon points="692,396 706,408 692,420 678,408" fill="#fef9e7" stroke="#0f2544" stroke-width="2.5" />
+
+          <!-- Nodo central: hexágono azul marino -->
+          <polygon
+            points="430,225 610,225 660,310 610,395 430,395 380,310"
+            fill="#0f2544"
+            stroke="#ffffff"
+            stroke-width="4"
+          />
+          <text x="520" y="294" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800" font-family="Inter, sans-serif">
+            Comunicación Respetuosa
+          </text>
+          <text x="520" y="324" text-anchor="middle" fill="#ebf3fa" font-size="15" font-weight="600" font-family="Inter, sans-serif">
+            Redes y entorno
+          </text>
+          <circle cx="520" cy="354" r="7" fill="#fef9e7" />
+
+          <!-- Rama 1 (Superior izquierda): Respeto -->
+          <rect x="36" y="42" width="254" height="176" rx="14" fill="#ffffff" stroke="#0f2544" stroke-width="3" />
+          <rect x="36" y="42" width="254" height="42" rx="12" fill="#0f2544" />
+          <circle cx="62" cy="63" r="8" fill="#fef9e7" />
+          <text x="172" y="69" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700" font-family="Inter, sans-serif">
+            Respeto
+          </text>
+          <text x="56" y="114" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Escucha activa sin burlas
+          </text>
+          <text x="56" y="144" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Trato amable en redes y casa
+          </text>
+          <text x="56" y="174" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Cero rumores ni agresiones
+          </text>
+
+          <!-- Rama 2 (Superior derecha): Diversidad -->
+          <rect x="750" y="42" width="254" height="176" rx="14" fill="#ffffff" stroke="#0f2544" stroke-width="3" />
+          <rect x="750" y="42" width="254" height="42" rx="12" fill="#0f2544" />
+          <polygon points="776,55 785,63 776,71 767,63" fill="#fef9e7" />
+          <text x="886" y="69" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700" font-family="Inter, sans-serif">
+            Diversidad
+          </text>
+          <text x="770" y="114" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Inclusión en todo grupo
+          </text>
+          <text x="770" y="144" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Valorar distintas opiniones
+          </text>
+          <text x="770" y="174" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Respeto a cada identidad
+          </text>
+
+          <!-- Rama 3 (Inferior izquierda): Convivencia -->
+          <rect x="36" y="402" width="254" height="176" rx="14" fill="#fef9e7" stroke="#0f2544" stroke-width="3" />
+          <rect x="36" y="402" width="254" height="42" rx="12" fill="#0f2544" />
+          <polygon points="62,55 70,71 54,71" transform="translate(0, 360)" fill="#fef9e7" />
+          <text x="172" y="429" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700" font-family="Inter, sans-serif">
+            Convivencia
+          </text>
+          <text x="56" y="474" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Diálogo calmado y acuerdos
+          </text>
+          <text x="56" y="504" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Cuidado de espacios comunes
+          </text>
+          <text x="56" y="534" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Netiqueta en comunidades
+          </text>
+
+          <!-- Rama 4 (Inferior derecha): Educación vial -->
+          <rect x="750" y="402" width="254" height="176" rx="14" fill="#fef9e7" stroke="#0f2544" stroke-width="3" />
+          <rect x="750" y="402" width="254" height="42" rx="12" fill="#0f2544" />
+          <rect x="768" y="416" width="16" height="14" rx="3" fill="#fef9e7" />
+          <text x="886" y="429" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700" font-family="Inter, sans-serif">
+            Educación vial
+          </text>
+          <text x="770" y="474" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Respeto a señales y giros
+          </text>
+          <text x="770" y="504" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Cuidado de peatones y vías
+          </text>
+          <text x="770" y="534" fill="#0f2544" font-size="14" font-weight="500" font-family="Inter, sans-serif">
+            Prevención en la calle
+          </text>
+        </svg>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
